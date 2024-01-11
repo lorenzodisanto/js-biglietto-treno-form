@@ -2,6 +2,12 @@ const usernameInput = document.getElementById("user-name");
 const distanceInput = document.getElementById("user-distance");
 const ageInput = document.getElementById("user-age");
 const printButton = document.getElementById("print-button");
+
+const cardTicket = document.querySelector(".d-none");
+const nameTicket = document.getElementById("ticket-name");
+const offerTicket = document.getElementById("offer");
+const coachTicket = document.getElementById("coach");
+const codeTicket = document.getElementById("code-cp");
 const resultPrice = document.getElementById("price");
 
 printButton.addEventListener("click", function () {
@@ -23,15 +29,30 @@ printButton.addEventListener("click", function () {
     const youngPrice = ticketPrice - youngSale;
     const youngPricePrint = youngPrice.toFixed(2);
     console.log(youngPrice);
-    resultPrice.innerText = "Prezzo finale: " + youngPricePrint + " €";
+    cardTicket.className = ".d-block";
+    nameTicket.innerText = username;
+    offerTicket.innerText = "Biglietto under 18";
+    coachTicket.innerText = 5;
+    codeTicket.innerText = 32454;
+    resultPrice.innerText = youngPricePrint + " €";
   } else if (age == "over-65") {
     const seniorPrice = ticketPrice - seniorSale;
     const seniorPricePrint = seniorPrice.toFixed(2);
     console.log(seniorPrice);
-    resultPrice.innerText = "Prezzo finale: " + seniorPricePrint + " €";
+    cardTicket.className = ".d-block";
+    nameTicket.innerText = username;
+    offerTicket.innerText = "Biglietto over 65";
+    coachTicket.innerText = 7;
+    codeTicket.innerText = 32154;
+    resultPrice.innerText = seniorPricePrint + " €";
   } else {
     const ticketPricePrint = ticketPrice.toFixed(2);
     console.log(ticketPrice);
-    resultPrice.innerText = "Prezzo finale: " + ticketPricePrint + " €";
+    cardTicket.className = ".d-block";
+    nameTicket.innerText = username;
+    offerTicket.innerText = "Biglietto standard";
+    coachTicket.innerText = 2;
+    codeTicket.innerText = 38764;
+    resultPrice.innerText = ticketPricePrint + " €";
   }
 });
