@@ -20,27 +20,29 @@
     <script type="text/javascript" src="./js/main.js" defer></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container py-3" id="content">
       <!-- Inserisci nome distanza età -->
       <div>
-        <h1>Calcola il prezzo del tuo biglietto</h1>
-        <div>
-          <label for="">Nome Cognome</label>
-          <input type="text" class="form-control" id="user-name" />
+        <h1 class="text-center">Calcola il prezzo del tuo biglietto</h1>
+        <div class="d-flex justify-content-around flex-wrap">
+          <div>
+            <label for="">Nome Cognome</label>
+            <input type="text" class="form-control" id="user-name" />
+          </div>
+          <div>
+            <label for="">Km da percorrere</label>
+            <input type="text" class="form-control" id="user-distance" />
+          </div>
+          <div>
+            <label for="">Fascia di età</label>
+            <select class="form-control" id="user-age">
+              <option value="under-18">Under 18</option>
+              <option value="maggiorenne">Maggiorenne</option>
+              <option value="over-65">Over 65</option>
+            </select>
+          </div>
         </div>
-        <div>
-          <label for="">Km da percorrere</label>
-          <input type="text" class="form-control" id="user-distance" />
-        </div>
-        <div>
-          <label for="">Fascia di età</label>
-          <select class="form-control" id="user-age">
-            <option value="under-18">Under 18</option>
-            <option value="maggiorenne">Maggiorenne</option>
-            <option value="over-65">Over 65</option>
-          </select>
-        </div>
-        <div>
+        <div class="text-center my-2">
           <button id="print-button" class="btn btn-primary mt-4">
             Genera biglietto
           </button>
@@ -48,9 +50,30 @@
       </div>
 
       <!-- Biglietto stampato -->
-      <div>
-        <h2 class="my-3">Prezzo biglietto</h2>
-        <code id="price" class="fs-2"></code>
+      <div class="d-none">
+        <h3 class="text-center mt-4">IL TUO BIGLIETTO</h3>
+        <div class="my-3 d-flex justify-content-between">
+          <div class="bg-primary text-light p-2 rounded-start flex-grow-1">
+            <h4>NOME PASSEGGERO</h4>
+            <p id="ticket-name"></p>
+          </div>
+          <div class="bg-info p-2">
+            <h5>Offerta</h5>
+            <p class="my-3" id="offer"></p>
+          </div>
+          <div class="bg-info p-2">
+            <h5>Carrozza</h5>
+            <p class="my-3" id="coach"></p>
+          </div>
+          <div class="bg-info p-2">
+            <h5>Codice CP</h5>
+            <p class="my-3" id="code-cp"></p>
+          </div>
+          <div class="bg-info p-2 rounded-end">
+            <h5>Costo biglietto</h5>
+            <p class="my-3" id="price"></p>
+          </div>
+        </div>
       </div>
     </div>
 
